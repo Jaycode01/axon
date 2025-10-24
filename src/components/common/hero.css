@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Gochi Hand";
+  src: url("fonts/GochiHand-Regular.woff2") format("woff2");
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-image: url("../../../public/assets/wavy_bg.svg");
+  background-position: bottom center;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+  background-size: cover;
+  height: calc(100vh - 120px);
+  margin: 0 auto;
+  padding: 5% 30px;
+}
+
+.text_section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: "Gochi Hand", fantasy;
+  font-size: 60px;
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 17px;
+  width: 50%;
+  text-align: center;
+  margin: 30px auto;
+  line-height: 22px;
+}
+
+.image_section {
+  justify-content: end;
+  display: flex;
+  width: fit-content;
+}
+
+.image_section img {
+  height: 700px;
+  width: 700px;
+}
+
+.text_section .cta {
+  margin: 0 auto;
+  background-color: #565449;
+  color: #fffff4;
+  font-size: 17px;
+  border: none;
+  padding: 20px 50px;
+  font-family: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.5s ease;
+}
+
+.text_section .cta:hover {
+  background-color: #383730;
+}
+
+.text_section .cta img {
+  transition: transform 0.5s ease;
+}
+
+.text_section .cta:hover img {
+  transform: translateX(7px);
+}
+
+.ticket {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 350px;
+  top: 30px;
+}
+
+.ticket_glow {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  top: 100px;
+  width: 350px;
+}
