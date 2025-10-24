@@ -1,0 +1,66 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  border: 2px solid #11120d;
+  align-items: center;
+  padding: 15px 25px;
+  width: 50%;
+  border-radius: 70px;
+}
+
+nav img {
+  width: 150px;
+  height: auto;
+}
+
+.cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta button {
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login_btn {
+  background-color: inherit;
+  border: 1px solid #565449;
+  padding: 15px 40px;
+  font-weight: 500;
+  border-radius: 30px;
+  color: #565449;
+  transition: all 0.7s ease;
+}
+
+.login_btn:hover {
+  background-color: #565449;
+  color: #fffff4;
+}
+
+.signup_btn {
+  background-color: #565449;
+  color: #fffff4;
+  padding: 17px 30px;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.5s ease;
+  gap: 3px;
+}
+
+.signup_btn:hover {
+  transform: translateX(5px);
+}
+
+.signup_btn img {
+  height: 25px;
+  width: 25px;
+}
