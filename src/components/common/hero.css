@@ -13,7 +13,6 @@
   position: relative;
   background-color: inherit;
   width: 100%;
-  background-size: cover;
   height: calc(100vh - 120px);
   margin: 0 auto;
   padding: 5% 30px;
@@ -95,4 +94,37 @@
   right: 20px;
   top: 100px;
   width: 350px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0;
+    background-size: contain;
+  }
+
+  .text_section {
+    width: 100%;
+  }
+
+  .heading {
+    width: 95%;
+    font-size: 40px;
+  }
+
+  .description {
+    width: 90%;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .ticket {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ticket_glow {
+    width: 150px;
+    height: 150px;
+    top: 80%;
+  }
 }

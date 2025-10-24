@@ -12,5 +12,6 @@
 
 body {
   font-family: "Funnel Display", fantasy;
+  max-width: 100%;
   background: #fffff4;
 }
