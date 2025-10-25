@@ -1,6 +1,9 @@
 import "./hero.css";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="text_section">
@@ -14,7 +17,7 @@ function Hero() {
           Every detail is built to make managing your tickets simpler, smarter,
           and beautifully efficient.
         </p>
-        <button type="button" className="cta">
+        <button type="button" className="cta" onClick={() => navigate("/auth")}>
           Try out <img src="assets/caret.svg" alt="right_caret" />
         </button>
       </div>

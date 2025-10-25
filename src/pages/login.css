@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Gochi Hand";
+  src: url("fonts/GochiHand-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+.login_section {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffff4;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.switch_box {
+  display: flex;
+  border: 1px solid #11120d;
+  border-radius: 40px;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+}
+
+.switch_box button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: all 0.7s ease;
+}
+
+.switch_box button.active {
+  background-color: #565449;
+  color: #fffff4;
+}
+
+.login_section > h1 {
+  font-family: "Gochi hand", fantasy;
+  font-size: 45px;
+}
+
+.login_section form {
+  border: 1px solid #333;
+  width: 40%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.login_section form .input_field {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  border: 1px solid #11120d;
+  padding: 5px 15px;
+}
+
+.login_section form .input_field input {
+  border: none;
+  width: 100%;
+  padding: 15px;
+  font-family: inherit;
+}
+
+.login_section form .input_field input:focus {
+  outline: none;
+}
+
+.login_section form .login_btn {
+  font-family: inherit;
+  padding: 15px 35px;
+  gap: 5px;
+  align-items: center;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  background-color: #565449;
+  color: #fffff4;
+  width: fit-content;
+}
+
+.login_section form .login_btn:hover {
+  background-color: #44433b;
+}
+
+.login_section form .login_btn img {
+  width: 20px;
+}

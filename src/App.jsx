@@ -1,12 +1,15 @@
-import Hero from "./components/common/hero";
-import Navbar from "./components/layout/navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import AuthPage from "./pages/auth";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<AuthPage />} />
+      </Routes>
+    </Router>
   );
 }
 
