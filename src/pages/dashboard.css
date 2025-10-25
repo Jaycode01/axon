@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Luckiest Guy";
+  src: url("fonts/LuckiestGuy-Regular.woff2") format("woff2");
+}
+
+.dashboard {
+  padding: 70px 3%;
+}
+
+.dashboard .top_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.summary_card {
+  background-color: #fffff4;
+  border: 1px solid #5654496b;
+  color: #11120d;
+  padding: 20px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.7s ease;
+}
+
+.summary_card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.summary_card .label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 7px;
+}
+
+.summary_card .label img {
+  width: 40px;
+}
+
+.summary_card .description {
+  text-align: left;
+  margin: 15px 0 0 0;
+  width: 100%;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.summary_card .value {
+  font-family: "Luckiest Guy", fantasy;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
