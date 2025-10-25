@@ -41,7 +41,18 @@ function Dashboard() {
             </div>
           ))}
         </div>
-        <div className="bottom_section"></div>
+        <div className="bottom_section">
+          <div className="cta">
+            <button type="button">View All Tickets</button>
+            <button type="button">
+              Create Ticket <img src="assets/plus.svg" alt="add ticket" />
+            </button>
+          </div>
+
+          <div className="center_image">
+            <img src="assets/ticket_collection.png" alt="tickets collection" />
+          </div>
+        </div>
       </section>
     </>
   );

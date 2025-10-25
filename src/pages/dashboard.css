@@ -38,7 +38,7 @@
 }
 
 .summary_card .label img {
-  width: 40px;
+  width: 35px;
 }
 
 .summary_card .description {
@@ -53,4 +53,65 @@
   font-family: "Luckiest Guy", fantasy;
   font-size: 35px;
   letter-spacing: 2px;
+}
+
+.bottom_section {
+  background-color: #fffff4;
+  border: 1px solid #5654496b;
+  color: #11120d;
+  padding: 20px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  transition: all 0.7s ease;
+  margin-top: 30px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bottom_section .cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.bottom_section .cta button {
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
+  border: none;
+  gap: 5px;
+}
+
+.bottom_section .cta button:first-child {
+  background-color: inherit;
+  border: 1px solid #11120d;
+}
+
+.bottom_section .cta button:nth-child(2) {
+  background-color: #11120d;
+  color: #fffff4;
+}
+
+.bottom_section .cta button img {
+  width: 25px;
+}
+
+.bottom_section > .center_image {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.center_image img {
+  height: 100%;
+  align-self: center;
+  opacity: 0.5;
 }
