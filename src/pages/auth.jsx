@@ -12,7 +12,11 @@ function AuthPage() {
   return (
     <div className="auth_container">
       <div className="auth_box">
-        {loggedin ? <Login toggleForm={toggleForm} /> : <SignUp />}
+        {loggedin ? (
+          <Login toggleForm={toggleForm} />
+        ) : (
+          <SignUp toggleForm={toggleForm} />
+        )}
       </div>
     </div>
   );
