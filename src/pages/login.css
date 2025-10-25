@@ -117,3 +117,16 @@
   background-color: #2ecc71;
   border: 1px solid #1d944f;
 }
+
+@media (max-width: 768px) {
+  .login_section form {
+    width: 85%;
+  }
+}
+
+@media (max-width: 450px) {
+  .login_section > h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
