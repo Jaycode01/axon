@@ -11,6 +11,7 @@ function SignUp({ toggleForm }) {
     password: "",
   });
   const [message, setmessage] = useState("");
+  const [messagetype, setmessagetype] = useState("");
 
   const navigate = useNavigate();
 
@@ -31,12 +32,14 @@ function SignUp({ toggleForm }) {
       !formdata.password
     ) {
       setmessage("All fields required.");
+      setmessagetype("error");
       return;
     }
 
     localStorage.setItem("user", JSON.stringify(formdata));
 
     setmessage("Your account is created successfully!");
+    setmessagetype("success");
     setformdata({
       name: "",
       email: "",
@@ -44,12 +47,14 @@ function SignUp({ toggleForm }) {
       password: "",
     });
 
-    navigate("/dashboard");
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 2000);
   };
 
   return (
     <section className="signup_section">
-      {message && <div className="message">{message}</div>}
+      {message && <div className={`message ${messagetype}`}>{message}</div>}
       <div className="switch_box" onClick={toggleForm}>
         <button
           type="button"

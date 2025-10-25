@@ -95,3 +95,25 @@
 .login_section form .login_btn img {
   width: 20px;
 }
+
+.message {
+  position: absolute;
+  right: 30px;
+  text-align: left;
+  top: 30px;
+  font-size: 15px;
+  color: #fff;
+  width: 350px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.message.error {
+  background-color: #e74c3c;
+  border: 1px solid #d83725;
+}
+
+.message.success {
+  background-color: #2ecc71;
+  border: 1px solid #1d944f;
+}
