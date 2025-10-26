@@ -37,6 +37,7 @@ function SignUp({ toggleForm }) {
     }
 
     localStorage.setItem("user", JSON.stringify(formdata));
+    localStorage.setItem("loggedIn", "true");
 
     setmessage("Your account is created successfully!");
     setmessagetype("success");

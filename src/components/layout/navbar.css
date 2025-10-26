@@ -84,6 +84,50 @@ nav .cta {
   height: 30px;
 }
 
+.user_space {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #11120d;
+  padding: 10px 30px;
+  border-radius: 30px;
+  gap: 7px;
+}
+
+.user_space img {
+  width: 30px;
+}
+
+.loggedin_cta {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.loggedin_cta > .logout_btn {
+  background: rgb(233, 48, 24);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  gap: 5px;
+  font-family: inherit;
+  border-radius: 30px;
+  padding: 15px 30px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.loggedin_cta > .logout_btn:hover {
+  background-color: rgb(202, 48, 28);
+}
+
+.loggedin_cta > .logout_btn img {
+  width: 23px;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
   nav {
