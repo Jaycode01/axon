@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./login";
 import SignUp from "./signup";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./auth.css";
 
 function AuthPage() {
@@ -12,6 +13,15 @@ function AuthPage() {
   };
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.mode === "login") {
+      setloggedin(true);
+    } else {
+      setloggedin(false);
+    }
+  });
   return (
     <div className="auth_container">
       <button type="button" onClick={() => navigate("/")} className="back">

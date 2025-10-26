@@ -50,11 +50,15 @@ function Navbar() {
             <button
               type="button"
               className="login_btn"
-              onClick={() => navigate("/auth")}
+              onClick={() => navigate("/auth", { state: { mode: "login" } })}
             >
               Login
             </button>
-            <button type="button" className="signup_btn">
+            <button
+              type="button"
+              className="signup_btn"
+              onClick={() => navigate("/auth", { state: { mode: "signup" } })}
+            >
               <img src="assets/zap.svg" alt="zap" />
               Get Started
             </button>
