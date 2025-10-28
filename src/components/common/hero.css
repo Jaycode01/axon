@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Gochi Hand";
-  src: url("fonts/GochiHand-Regular.woff2") format("woff2");
+  src: url("../../../public/fonts/GochiHand-Regular.woff2") format("woff2");
 }
 
 .hero {
@@ -12,6 +12,7 @@
   background-position: bottom center;
   position: relative;
   background-color: inherit;
+  font-family: "Funnel Display";
   width: 100%;
   height: calc(100vh - 120px);
   margin: 0 auto;

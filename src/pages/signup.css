@@ -1,9 +1,8 @@
 @font-face {
   font-family: "Gochi Hand";
-  src: url("fonts/GochiHand-Regular.woff2") format("woff2");
+  src: url("../../../public/fonts/GochiHand-Regular.woff2") format("woff2");
   font-display: swap;
 }
-
 .signup_section {
   display: flex;
   flex-direction: column;
