@@ -21,7 +21,7 @@ function AuthPage() {
     } else {
       setloggedin(false);
     }
-  });
+  }, [location.state]);
   return (
     <div className="auth_container">
       <button type="button" onClick={() => navigate("/")} className="back">

@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/navbar";
+import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 
 function Dashboard() {
@@ -25,6 +26,8 @@ function Dashboard() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi animi quo reprehenderit adipisci cum dolor earum in recusandae quos illum atque possimus veritatis delectus fugit iure, qui, harum rerum?",
     },
   ];
+
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -43,7 +46,9 @@ function Dashboard() {
         </div>
         <div className="bottom_section">
           <div className="cta">
-            <button type="button">View All Tickets</button>
+            <button type="button" onClick={() => navigate("/tickets")}>
+              View All Tickets
+            </button>
             <button type="button">
               Create Ticket <img src="assets/plus.svg" alt="add ticket" />
             </button>

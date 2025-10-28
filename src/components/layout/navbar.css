@@ -106,7 +106,7 @@ nav .cta {
 }
 
 .loggedin_cta > .logout_btn {
-  background: rgb(233, 48, 24);
+  background: #e93018;
   color: white;
   display: flex;
   flex-direction: row;

@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Gochi Hand";
+  src: url("fonts/GochiHand-Regular.woff2") format("woff2");
+}
+
+.tickets_management {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 5% 30px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions > h1 {
+  font-family: "Gochi Hand";
+  font-size: 45px;
+  text-transform: uppercase;
+}
+
+.actions > .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.actions > .buttons > button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: inherit;
+  padding: 13px 25px;
+  border: none;
+}
+
+.actions > .buttons > select {
+  padding: 10px;
+  font-family: inherit;
+  outline: none;
+  border: 1px solid #333;
+}
+
+.tickets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.ticket_card {
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.ticket_title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.ticket_card > .status_and_date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status_and_date .status {
+  text-transform: lowercase;
+  font-size: 16px;
+}
+
+.status_and_date .date {
+  font-size: 15px;
+}
+
+.ticket_description {
+  font-size: 14px;
+}
+
+.ticket_cta {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.ticket_cta button {
+  width: 50%;
+  font-family: inherit;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.ticket_cta .edit {
+  background-color: #565449;
+  color: #fffff4;
+}
+
+.ticket_cta .delete {
+  background-color: #eb3119;
+  color: #fffff4;
+}

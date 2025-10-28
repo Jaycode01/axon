@@ -26,7 +26,7 @@ function Navbar() {
     localStorage.removeItem("loggedIn");
     setisLoggedIn(false);
     setTimeout(() => {
-      navigate("/");
+      navigate("/auth");
     }, 300);
   };
 
