@@ -11,7 +11,8 @@ function Navbar() {
 
   useEffect(() => {
     const storeduser = localStorage.getItem("user");
-    const loggedIn = localStorage.getItem("loggedIn") === "true";
+    const session = JSON.parse(localStorage.getItem("ticketapp_session"));
+    const loggedIn = session && session.token ? true : false;
 
     if (storeduser && loggedIn) {
       const parseduser = JSON.parse(storeduser);
@@ -23,7 +24,7 @@ function Navbar() {
   }, []);
 
   const handlelogout = () => {
-    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("ticketapp_session");
     setisLoggedIn(false);
     setTimeout(() => {
       navigate("/auth");

@@ -37,7 +37,13 @@ function SignUp({ toggleForm }) {
     }
 
     localStorage.setItem("user", JSON.stringify(formdata));
-    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem(
+      "ticketapp_session",
+      JSON.stringify({
+        email: formdata.email,
+        token: "session_" + Date.now(),
+      })
+    );
 
     setmessage("Your account is created successfully!");
     setmessagetype("success");

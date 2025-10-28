@@ -15,6 +15,7 @@
   width: 100%;
   height: calc(100vh - 120px);
   margin: 0 auto;
+  max-width: 1440px;
   padding: 5% 30px;
 }
 
@@ -94,6 +95,19 @@
   right: 20px;
   top: 100px;
   width: 350px;
+}
+
+.circle {
+  position: absolute;
+  top: 60px;
+  right: 200px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #f5bd45 0%, #ee9e1e 80%);
+  border-radius: 50%;
+  filter: blur(5px);
+  opacity: 0.5;
+  z-index: 0;
 }
 
 @media (max-width: 768px) {

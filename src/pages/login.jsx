@@ -41,7 +41,15 @@ function Login({ toggleForm }) {
       formdata.email === storedUser.email &&
       formdata.password === storedUser.password
     ) {
-      localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("user", JSON.stringify(formdata));
+      localStorage.setItem(
+        "ticketapp_session",
+        JSON.stringify({
+          email: formdata.email,
+          token: "session_" + Date.now(),
+        })
+      );
+
       setmessage("You've successfully logged In");
       setmessagetype("success");
       setTimeout(() => {

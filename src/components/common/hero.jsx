@@ -27,6 +27,8 @@ function Hero() {
         alt="victory ticket"
         className="ticket_glow"
       />
+
+      <div className="circle"></div>
     </section>
   );
 }
