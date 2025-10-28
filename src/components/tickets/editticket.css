@@ -1,0 +1,42 @@
+.edit_ticket {
+  background-color: #fffff4;
+  position: absolute;
+  height: fit-content;
+  width: 50%;
+  left: 25%;
+  top: 25%;
+  border: 1px solid #000000c5;
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit_ticket > p {
+  font-size: 15px;
+  color: #ff5340e5;
+}
+
+.edit_ticket input,
+select,
+textarea {
+  font-family: inherit;
+  padding: 15px;
+  outline: none;
+  border: 1px solid #333;
+}
+
+textarea {
+  height: 200px;
+}
+
+.edit_ticket button {
+  padding: 15px;
+  font-size: 14px;
+  border: none;
+  background-color: #565449;
+  color: #fffff4;
+  font-family: inherit;
+  cursor: pointer;
+}

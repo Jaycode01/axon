@@ -8,11 +8,20 @@ function CreateTicket({ onAddTicket }) {
   const [description, setdescription] = useState("");
   const [message, setmessage] = useState("");
 
+  const countwords = (text) => {
+    return text.trim().split(/\s+/).filter(Boolean).length;
+  };
+
   const createticket = (e) => {
     e.preventDefault();
 
     if (!title || !status || !date || !description) {
       setmessage("All fields required.");
+      return;
+    }
+
+    if (countwords(description) < 20) {
+      setmessage("Description must be at least 20 words.");
       return;
     }
 

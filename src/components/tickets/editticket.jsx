@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./editticket.css";
 
 const EditTicket = ({ ticket, onUpdate, onclose }) => {
   const [title, settitle] = useState(ticket.title);
@@ -6,12 +7,22 @@ const EditTicket = ({ ticket, onUpdate, onclose }) => {
   // const [statustype, setstatustype] = useState(ticket.statustype);
   const [date, setdate] = useState(ticket.date);
   const [description, setdescription] = useState(ticket.description);
+  const [message, setmessage] = useState("");
+
+  const countwords = (text) => {
+    return text.trim().split(/\s+/).filter(Boolean).length;
+  };
 
   const updateticket = (e) => {
     e.preventDefault();
     if (!ticket) return;
 
     const updatedticket = { ...ticket, title, status, date, description };
+
+    if (countwords(description) < 20) {
+      setmessage("Description must be at least 20 words long.");
+      return;
+    }
 
     // setstatustype(status);
 
@@ -26,7 +37,8 @@ const EditTicket = ({ ticket, onUpdate, onclose }) => {
   };
 
   return (
-    <form className="create_ticket" onSubmit={updateticket}>
+    <form className="edit_ticket" onSubmit={updateticket}>
+      {message && <p>{message}</p>}
       <input
         type="text"
         name="title"
