@@ -13,6 +13,11 @@
   gap: 15px;
 }
 
+.create_ticket > p {
+  font-size: 15px;
+  color: #ff5340e5;
+}
+
 .create_ticket input,
 select,
 textarea {
@@ -33,4 +38,5 @@ textarea {
   background-color: #565449;
   color: #fffff4;
   font-family: inherit;
+  cursor: pointer;
 }

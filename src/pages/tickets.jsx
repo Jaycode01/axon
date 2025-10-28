@@ -72,14 +72,13 @@ function Tickets() {
         </div>
 
         {createmodal && <CreateTicket onAddTicket={addticket} />}
-        {editmodal &&
-          selectedticket(
-            <EditTicket
-              ticket={selectedticket}
-              onUpdate={updateticket}
-              onclose={() => seteditmodal(false)}
-            />
-          )}
+        {editmodal && selectedticket && (
+          <EditTicket
+            ticket={selectedticket}
+            onUpdate={updateticket}
+            onclose={() => seteditmodal(false)}
+          />
+        )}
       </section>
     </>
   );

@@ -3,6 +3,7 @@ import { useState } from "react";
 const EditTicket = ({ ticket, onUpdate, onclose }) => {
   const [title, settitle] = useState(ticket.title);
   const [status, setstatus] = useState(ticket.status);
+  // const [statustype, setstatustype] = useState(ticket.statustype);
   const [date, setdate] = useState(ticket.date);
   const [description, setdescription] = useState(ticket.description);
 
@@ -11,6 +12,8 @@ const EditTicket = ({ ticket, onUpdate, onclose }) => {
     if (!ticket) return;
 
     const updatedticket = { ...ticket, title, status, date, description };
+
+    // setstatustype(status);
 
     const existing = JSON.parse(localStorage.getItem("tickets")) || [];
     const updatedlist = existing.map((t) =>
@@ -37,8 +40,8 @@ const EditTicket = ({ ticket, onUpdate, onclose }) => {
         onChange={(e) => setstatus(e.target.value)}
       >
         <option value="open">Open</option>
-        <option value="resolved">Resolved</option>
-        <option value="ongoing">Ongoing</option>
+        <option value="in_progress">In Progress</option>
+        <option value="closed">Closed</option>
       </select>
       <input
         type="date"

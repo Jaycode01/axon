@@ -6,12 +6,13 @@ function CreateTicket({ onAddTicket }) {
   const [status, setstatus] = useState("");
   const [date, setdate] = useState("");
   const [description, setdescription] = useState("");
+  const [message, setmessage] = useState("");
 
   const createticket = (e) => {
     e.preventDefault();
 
     if (!title || !status || !date || !description) {
-      alert("All fields required");
+      setmessage("All fields required.");
       return;
     }
 
@@ -37,6 +38,7 @@ function CreateTicket({ onAddTicket }) {
 
   return (
     <form className="create_ticket" onSubmit={createticket}>
+      {message && <p>{message}</p>}
       <input
         type="text"
         name="title"
@@ -50,8 +52,8 @@ function CreateTicket({ onAddTicket }) {
         onChange={(e) => setstatus(e.target.value)}
       >
         <option value="open">Open</option>
-        <option value="resolved">Resolved</option>
-        <option value="ongoing">Ongoing</option>
+        <option value="in_progress">In Progress</option>
+        <option value="closed">Closed</option>
       </select>
       <input
         type="date"
