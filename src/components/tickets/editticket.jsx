@@ -1,42 +1,29 @@
 import { useState } from "react";
-import "./createticket.css";
 
-function CreateTicket({ onAddTicket }) {
-  const [title, settitle] = useState("");
-  const [status, setstatus] = useState("");
-  const [date, setdate] = useState("");
-  const [description, setdescription] = useState("");
+const EditTicket = ({ ticket, onUpdate, onclose }) => {
+  const [title, settitle] = useState(ticket.title);
+  const [status, setstatus] = useState(ticket.status);
+  const [date, setdate] = useState(ticket.date);
+  const [description, setdescription] = useState(ticket.description);
 
-  const createticket = (e) => {
+  const updateticket = (e) => {
     e.preventDefault();
+    if (!ticket) return;
 
-    if (!title || !status || !date || !description) {
-      alert("All fields required");
-      return;
-    }
-
-    const newticket = {
-      id: Date.now(),
-      title,
-      description,
-      date,
-      status,
-    };
+    const updatedticket = { ...ticket, title, status, date, description };
 
     const existing = JSON.parse(localStorage.getItem("tickets")) || [];
-    existing.push(newticket);
-    localStorage.setItem("tickets", JSON.stringify(existing));
+    const updatedlist = existing.map((t) =>
+      t && t.id === ticket.id ? updatedticket : t
+    );
 
-    onAddTicket(newticket);
-
-    settitle("");
-    setdescription("");
-    setdate("");
-    setstatus("");
+    localStorage.setItem("tickets", JSON.stringify(updatedlist));
+    onUpdate(updatedticket);
+    onclose();
   };
 
   return (
-    <form className="create_ticket" onSubmit={createticket}>
+    <form className="create_ticket" onSubmit={updateticket}>
       <input
         type="text"
         name="title"
@@ -65,9 +52,9 @@ function CreateTicket({ onAddTicket }) {
         value={description}
         onChange={(e) => setdescription(e.target.value)}
       />
-      <button type="submit">Create Ticket</button>
+      <button type="submit">Update Ticket</button>
     </form>
   );
-}
+};
 
-export default CreateTicket;
+export default EditTicket;

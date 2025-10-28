@@ -3,9 +3,13 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/layout/navbar";
 import CreateTicket from "../components/tickets/createticket";
 import TicketCard from "../components/tickets/ticketcard";
+import EditTicket from "../components/tickets/editticket";
 
 function Tickets() {
   const [tickets, settickets] = useState([]);
+  const [createmodal, setcreatemodal] = useState(false);
+  const [editmodal, seteditmodal] = useState(false);
+  const [selectedticket, setselectedticket] = useState(null);
 
   useEffect(() => {
     const savedtickets = JSON.parse(localStorage.getItem("tickets")) || [];
@@ -14,6 +18,18 @@ function Tickets() {
 
   const addticket = (ticket) => {
     settickets((prev) => [...prev, ticket]);
+    setcreatemodal(false);
+  };
+
+  const updateticket = (updatedTicket) => {
+    settickets((prev) =>
+      prev.map((t) => (t.id === updatedTicket.id ? updatedTicket : t))
+    );
+  };
+
+  const handleedit = (ticket) => {
+    setselectedticket(ticket);
+    seteditmodal(true);
   };
   return (
     <>
@@ -24,7 +40,9 @@ function Tickets() {
 
           {/* Buttons to manage tickets */}
           <div className="buttons">
-            <button type="button">Create New Ticket</button>
+            <button type="button" onClick={() => setcreatemodal(true)}>
+              Create New Ticket
+            </button>
             <select className="tickets_filter">
               <option value="all">All</option>
               <option value="open">Open</option>
@@ -40,12 +58,19 @@ function Tickets() {
             <p className="no_ticket_mssg">No tickets yet.</p>
           ) : (
             tickets.map((ticket) => (
-              <TicketCard key={ticket.id} ticket={ticket} />
+              <TicketCard key={ticket.id} ticket={ticket} onedit={handleedit} />
             ))
           )}
         </div>
 
-        <CreateTicket onAddTicket={addticket} />
+        {createmodal && <CreateTicket onAddTicket={addticket} />}
+        {editmodal && selectedticket && (
+          <EditTicket
+            ticket={selectedticket}
+            onUpdate={updateticket}
+            onclose={() => seteditmodal(false)}
+          />
+        )}
       </section>
     </>
   );

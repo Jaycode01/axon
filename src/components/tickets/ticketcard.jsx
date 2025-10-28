@@ -1,5 +1,5 @@
-function TicketCard({ ticket }) {
-  <>
+function TicketCard({ ticket, onedit }) {
+  return (
     <div className="ticket_card">
       <h2 className="ticket_title">{ticket.title}</h2>
       <small className="status_and_date">
@@ -8,7 +8,7 @@ function TicketCard({ ticket }) {
       </small>
       <p className="ticket_description">{ticket.description}</p>
       <div className="ticket_cta">
-        <button type="button" className="edit">
+        <button type="button" className="edit" onClick={() => onedit(ticket)}>
           Edit
         </button>
         <button type="button" className="delete">
@@ -16,7 +16,7 @@ function TicketCard({ ticket }) {
         </button>
       </div>
     </div>
-  </>;
+  );
 }
 
 export default TicketCard;
