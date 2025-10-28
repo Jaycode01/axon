@@ -6,6 +6,8 @@
 .tickets_management {
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
   gap: 70px;
   padding: 5% 30px;
 }
@@ -36,6 +38,7 @@
   align-items: center;
   font-family: inherit;
   padding: 13px 25px;
+  cursor: pointer;
   border: none;
 }
 

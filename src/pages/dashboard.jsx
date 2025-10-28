@@ -1,27 +1,43 @@
+import { useState, useEffect } from "react";
 import Navbar from "../components/layout/navbar";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 
 function Dashboard() {
+  const [stats, setstats] = useState({
+    total: 0,
+    open: 0,
+    closed: 0,
+  });
+
+  useEffect(() => {
+    const savedtickets = JSON.parse(localStorage.getItem("tickets")) || [];
+
+    const total = savedtickets.length;
+    const open = savedtickets.filter((t) => t.status === "open").length;
+    const closed = savedtickets.filter((t) => t.status === "closed").length;
+
+    setstats({ total, open, closed });
+  }, []);
   const summaries = [
     {
       label: "Total tickets",
       icon: "assets/tickets.svg",
-      value: 300,
+      value: stats.total,
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi animi quo reprehenderit adipisci cum dolor earum in recusandae quos illum atque possimus veritatis delectus fugit iure, qui, harum rerum?",
     },
     {
       label: "Open tickets",
       icon: "assets/open_ticket.svg",
-      value: 20,
+      value: stats.open,
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi animi quo reprehenderit adipisci cum dolor earum in recusandae quos illum atque possimus veritatis delectus fugit iure, qui, harum rerum?",
     },
     {
-      label: "Resolved tickets",
+      label: "Closed tickets",
       icon: "assets/resolved_ticket.svg",
-      value: 280,
+      value: stats.closed,
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi animi quo reprehenderit adipisci cum dolor earum in recusandae quos illum atque possimus veritatis delectus fugit iure, qui, harum rerum?",
     },
@@ -48,9 +64,6 @@ function Dashboard() {
           <div className="cta">
             <button type="button" onClick={() => navigate("/tickets")}>
               View All Tickets
-            </button>
-            <button type="button">
-              Create Ticket <img src="assets/plus.svg" alt="add ticket" />
             </button>
           </div>
 

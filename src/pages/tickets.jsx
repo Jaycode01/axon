@@ -1,5 +1,6 @@
 import "./tickets.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/layout/navbar";
 import CreateTicket from "../components/tickets/createticket";
 import TicketCard from "../components/tickets/ticketcard";
@@ -10,6 +11,8 @@ function Tickets() {
   const [createmodal, setcreatemodal] = useState(false);
   const [editmodal, seteditmodal] = useState(false);
   const [selectedticket, setselectedticket] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedtickets = JSON.parse(localStorage.getItem("tickets")) || [];
@@ -51,6 +54,9 @@ function Tickets() {
           <div className="buttons">
             <button type="button" onClick={() => setcreatemodal(true)}>
               Create New Ticket
+            </button>
+            <button type="button" onClick={() => navigate("/dashboard")}>
+              Dashboard
             </button>
           </div>
         </div>
