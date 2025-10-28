@@ -42,15 +42,58 @@
   border: none;
 }
 
-.actions > .buttons > select {
-  padding: 10px;
-  font-family: inherit;
-  outline: none;
-  border: 1px solid #333;
-}
-
 .tickets {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .tickets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actions > h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tickets {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .actions > h1 {
+    font-size: 30px;
+  }
+
+  .actions .buttons {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .actions .buttons button {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tickets_management {
+    padding: 8% 15px;
+    gap: 50px;
+  }
+
+  .actions > h1 {
+    font-size: 26px;
+  }
 }

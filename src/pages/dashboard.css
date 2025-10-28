@@ -117,3 +117,9 @@
   align-self: center;
   opacity: 0.5;
 }
+
+@media (max-width: 768px) {
+  .dashboard .top_section {
+    grid-template-columns: 1fr;
+  }
+}
