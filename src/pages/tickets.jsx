@@ -31,6 +31,15 @@ function Tickets() {
     setselectedticket(ticket);
     seteditmodal(true);
   };
+
+  const deleteticket = (id) => {
+    if (!window.confirm("Are you sure you want to delete this ticket.")) return;
+
+    const updatedtickets = tickets.filter((t) => t.id != id);
+    settickets(updatedtickets);
+    localStorage.setItem("tickets", JSON.stringify(updatedtickets));
+  };
+
   return (
     <>
       <Navbar />
@@ -43,12 +52,6 @@ function Tickets() {
             <button type="button" onClick={() => setcreatemodal(true)}>
               Create New Ticket
             </button>
-            <select className="tickets_filter">
-              <option value="all">All</option>
-              <option value="open">Open</option>
-              <option value="ongoing">Ongoing</option>
-              <option value="resolved">Resolved</option>
-            </select>
           </div>
         </div>
 
@@ -58,19 +61,25 @@ function Tickets() {
             <p className="no_ticket_mssg">No tickets yet.</p>
           ) : (
             tickets.map((ticket) => (
-              <TicketCard key={ticket.id} ticket={ticket} onedit={handleedit} />
+              <TicketCard
+                key={ticket.id}
+                ticket={ticket}
+                onedit={handleedit}
+                ondelete={deleteticket}
+              />
             ))
           )}
         </div>
 
         {createmodal && <CreateTicket onAddTicket={addticket} />}
-        {editmodal && selectedticket && (
-          <EditTicket
-            ticket={selectedticket}
-            onUpdate={updateticket}
-            onclose={() => seteditmodal(false)}
-          />
-        )}
+        {editmodal &&
+          selectedticket(
+            <EditTicket
+              ticket={selectedticket}
+              onUpdate={updateticket}
+              onclose={() => seteditmodal(false)}
+            />
+          )}
       </section>
     </>
   );

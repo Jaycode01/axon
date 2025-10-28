@@ -1,4 +1,4 @@
-function TicketCard({ ticket, onedit }) {
+function TicketCard({ ticket, onedit, ondelete }) {
   return (
     <div className="ticket_card">
       <h2 className="ticket_title">{ticket.title}</h2>
@@ -11,7 +11,11 @@ function TicketCard({ ticket, onedit }) {
         <button type="button" className="edit" onClick={() => onedit(ticket)}>
           Edit
         </button>
-        <button type="button" className="delete">
+        <button
+          type="button"
+          className="delete"
+          onClick={() => ondelete(ticket.id)}
+        >
           Delete
         </button>
       </div>
