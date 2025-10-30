@@ -40,3 +40,10 @@ textarea {
   font-family: inherit;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .create_ticket {
+    width: 80%;
+    left: 10%;
+  }
+}
